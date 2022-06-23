@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="rbac" parallel="methods" thread-count="5" verbose="10">
+
+    <!--ip地址，目标spark-thriftserver的IP地址-->
+<!--    <parameter name="HOSTNAME" value="${HOSTNAME}"/>-->
+    <parameter name="HOSTNAME" value="127.0.0.1"/>
+    <!--thriftserver端口号，传入10000-->
+    <parameter name="PORT" value="10000"/>
+    <!--rbac管理员用户名-->
+    <parameter name="ROOTUSER" value="root"/>
+    <!--rbac管理员用户密码-->
+    <parameter name="ROOTPWD" value="root"/>
+    <!--rbac测试用户名-->
+    <parameter name="TESTUSER" value="ben"/>
+    <!--rbac测试用户密码-->
+    <parameter name="TESTPWD" value="ben"/>
+    <!--测试数据库名字-->
+    <parameter name="DBNAME" value="testdb"/>
+    <!--测试group名字-->
+    <parameter name="TESTGROUP" value="testgroup"/>
+
+    <test name="rbac">
+        <packages>
+                <package name="com.sequoiadp.rbac.ddl"></package>
+        </packages>
+
+    </test>
+
+</suite>
